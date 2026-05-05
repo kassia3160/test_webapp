@@ -153,3 +153,58 @@ body {
   height: auto;
   display: block;
 }
+
+/* 추억 모음 섹션 스타일 */
+.memories-section {
+    text-align: center;
+}
+
+.memories-section h2 {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.memories-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+}
+
+@media (min-width: 768px) {
+    .memories-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+.memory-card {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(107, 84, 59, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #fff7ee;
+}
+
+.memory-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(107, 84, 59, 0.18);
+}
+
+.memory-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.memory-caption {
+    padding: 12px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: var(--point-color);
+    margin: 0;
+    background: #fff7ee;
+}
