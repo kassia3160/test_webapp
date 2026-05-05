@@ -3,37 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>My Web App</title>
+    <title>저희를 소개합니다</title>
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
-    <!-- iOS 전용 설정 -->
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
 </head>
 <body>
 
     <header class="app-bar">
-        <h1>나의 웹앱</h1>
+        <h1>우리들의 첫인사</h1>
     </header>
 
+    <!-- 탭 메뉴 -->
+    <div class="tab-menu">
+        <button class="tab-btn active" onclick="openTab('groom')">예비 신랑</button>
+        <button class="tab-btn" onclick="openTab('bride')">예비 신부</button>
+    </div>
+
     <main class="content">
-        <div class="card">
-            <h2>반가워요! 👋</h2>
-            <p>이곳에 원하는 내용을 채워 넣으세요.</p>
-            <button id="action-btn">버튼 클릭</button>
+        <!-- 신랑 섹션 -->
+        <div id="groom" class="tab-content active">
+            <div class="profile-section">
+                <img src="https://via.placeholder.com/150" alt="신랑 사진" class="main-img">
+                <h2>김철수</h2>
+                <p class="subtitle">신뢰를 주는 든든한 동반자</p>
+                
+                <div class="info-list">
+                    <div class="info-item"><strong>직업</strong> <span>OO전자 연구원</span></div>
+                    <div class="info-item"><strong>성격</strong> <span>성실하고 다정한 편입니다.</span></div>
+                    <div class="info-item"><strong>취미</strong> <span>등산, 요리 (함께 즐기는 것을 좋아합니다)</span></div>
+                </div>
+
+                <div class="message-card">
+                    <h3>"따뜻한 가정을 꾸리겠습니다"</h3>
+                    <p>부모님들의 사랑을 본받아 서로를 아끼며 예쁘게 잘 살겠습니다. 부족한 점이 많지만 믿음직한 사위가 되도록 노력하겠습니다.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 신부 섹션 -->
+        <div id="bride" class="tab-content">
+            <div class="profile-section">
+                <img src="https://via.placeholder.com/150" alt="신부 사진" class="main-img">
+                <h2>이영희</h2>
+                <p class="subtitle">밝은 에너지로 웃음꽃 피우는 사람</p>
+                
+                <div class="info-list">
+                    <div class="info-item"><strong>직업</strong> <span>초등학교 선생님</span></div>
+                    <div class="info-item"><strong>성격</strong> <span>긍정적이고 세심합니다.</span></div>
+                    <div class="info-item"><strong>취미</strong> <span>꽃꽂이, 독서 (차분한 시간을 즐깁니다)</span></div>
+                </div>
+
+                <div class="message-card">
+                    <h3>"현명한 아내가 되겠습니다"</h3>
+                    <p>언제나 웃음이 끊이지 않는 화목한 가정을 만들고 싶습니다. 예쁘게 지켜봐 주시는 부모님께 효도하며 행복하게 살겠습니다.</p>
+                </div>
+            </div>
         </div>
     </main>
 
-    <nav class="bottom-nav">
-        <a href="#" class="nav-item active">홈</a>
-        <a href="#" class="nav-item">검색</a>
-        <a href="#" class="nav-item">설정</a>
-    </nav>
-
     <script>
-        document.getElementById('action-btn').addEventListener('click', () => {
-            alert('웹앱이 정상적으로 작동합니다!');
-        });
+        function openTab(tabName) {
+            // 모든 탭 콘텐츠 숨기기
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            // 모든 버튼 비활성화
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            // 선택한 탭 보이기
+            document.getElementById(tabName).classList.add('active');
+            // 클릭한 버튼 활성화
+            event.currentTarget.classList.add('active');
+        }
     </script>
 </body>
 </html>
