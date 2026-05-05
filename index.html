@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>My Web App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <!-- iOS 전용 설정 -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head>
+<body>
+
+    <header class="app-bar">
+        <h1>나의 웹앱</h1>
+    </header>
+
+    <main class="content">
+        <div class="card">
+            <h2>반가워요! 👋</h2>
+            <p>이곳에 원하는 내용을 채워 넣으세요.</p>
+            <button id="action-btn">버튼 클릭</button>
+        </div>
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="#" class="nav-item active">홈</a>
+        <a href="#" class="nav-item">검색</a>
+        <a href="#" class="nav-item">설정</a>
+    </nav>
+
+    <script>
+        document.getElementById('action-btn').addEventListener('click', () => {
+            alert('웹앱이 정상적으로 작동합니다!');
+        });
+    </script>
+</body>
+</html>
